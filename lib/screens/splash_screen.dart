@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:hangman_game/routes/welcome_route.dart';
 import 'package:hangman_game/widgets/circular_image_widget.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -12,6 +15,10 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
+
+    Timer(Duration(seconds: 3), () {
+      MaterialPageRoute(builder: (context) => WelcomeRoute());
+    });
   }
 
   @override
@@ -30,7 +37,10 @@ class _SplashScreenState extends State<SplashScreen> {
                 padding: EdgeInsets.only(top: 200, bottom: 25.0),
                 child: Text(
                   "Carregando...",
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500, color: Colors.white),
+                  style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.white),
                 ),
               ),
               Padding(
