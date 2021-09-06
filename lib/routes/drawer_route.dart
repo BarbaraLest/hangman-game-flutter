@@ -11,7 +11,32 @@ class DrawerRoute extends StatelessWidget {
         centerTitle: true,
       ),
       body: Container(),
-      drawer: Drawer(),
+      drawer: Drawer(
+        child: Column(
+          children: [
+            DrawerHeader(
+              padding: EdgeInsets.zero,
+              margin: EdgeInsets.zero,
+              decoration: BoxDecoration(color: Colors.pinkAccent),
+              child: UserAccountsDrawerHeader(
+                decoration: BoxDecoration(color: Colors.transparent),
+                accountName: Text(
+                  "Barbara Rodrigues",
+                  style: TextStyle(color: Colors.black),
+                ),
+                accountEmail: Text(
+                  "Barbara Rodrigues",
+                  style: TextStyle(color: Colors.black),
+                ),
+                currentAccountPicture: CircleAvatar(
+                  backgroundColor: Colors.blueAccent,
+                  //backgroundImage: AssetImage(''),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

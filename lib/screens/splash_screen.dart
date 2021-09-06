@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:hangman_game/routes/drawer_route.dart';
 import 'package:hangman_game/routes/welcome_route.dart';
 import 'package:hangman_game/utils/shared_preferences/app_preferences.dart';
-import 'package:hangman_game/widgets/circular_image_widget.dart';
+import 'package:hangman_game/utils/widgets/circular_image_widget.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
