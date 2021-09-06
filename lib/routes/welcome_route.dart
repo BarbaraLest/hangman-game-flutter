@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hangman_game/routes/home_route.dart';
 
 class WelcomeRoute extends StatefulWidget {
   const WelcomeRoute({Key? key}) : super(key: key);
@@ -8,6 +9,8 @@ class WelcomeRoute extends StatefulWidget {
 }
 
 class _WelcomeRouteState extends State<WelcomeRoute> {
+  bool _checkBoxIsChecked = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,14 +43,21 @@ class _WelcomeRouteState extends State<WelcomeRoute> {
                     ),
                     SizedBox(width: 5),
                     Checkbox(
-                      value: true,
-                      onChanged: null,
+                      value: this._checkBoxIsChecked,
+                      onChanged: (status) {
+                        setState(() {
+                          this._checkBoxIsChecked = status!;
+                        });
+                      },
                     ),
                   ],
                 ),
                 SizedBox(width: 10),
                 ElevatedButton(
-                  onPressed: null,
+                  onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => HomeRoute()),
+                  ),
                   child: Text(
                     "Disable button",
                     style: TextStyle(fontSize: 20),
